@@ -25,11 +25,11 @@ const botSec = document.createElement('div');
 botSec.classList.add('botSec');
 const title2 = document.createElement('h2');
 title2.textContent = 'Clear all completed';
-
+const taskList = new TaskList();
 // Clear All Event
 title2.addEventListener('click', () => {
-  const taskList = new TaskList();
   taskList.clearAllCompleted();
+
 });
 
 // Input Section
@@ -53,7 +53,7 @@ body.append(conSec);
 
 let index = 0;
 const completed = false;
-const taskList = new TaskList();
+
 // Add Button Event
 addBtn.addEventListener('click', () => {
   if (!input.value.trim()) {
@@ -76,5 +76,8 @@ window.addEventListener('keydown', (e) => {
 
 // On Page Load
 window.onload = () => {
+  if(localStorage['todo-list'].length>0){
+    taskList.listArray = JSON.parse(localStorage['todo-list']);
+  }
   taskList.display();
 };
