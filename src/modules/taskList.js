@@ -7,7 +7,6 @@ export default class TaskList {
   }
 
   display() {
-    
     const listContainer = document.querySelector('.listContainer');
     if (listContainer) {
       listContainer.innerHTML = '';

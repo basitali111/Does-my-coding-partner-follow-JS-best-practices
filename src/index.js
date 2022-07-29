@@ -29,7 +29,6 @@ const taskList = new TaskList();
 // Clear All Event
 title2.addEventListener('click', () => {
   taskList.clearAllCompleted();
-
 });
 
 // Input Section
@@ -76,7 +75,7 @@ window.addEventListener('keydown', (e) => {
 
 // On Page Load
 window.onload = () => {
-  if(localStorage['todo-list'].length>0){
+  if (localStorage['todo-list'].length > 0) {
     taskList.listArray = JSON.parse(localStorage['todo-list']);
   }
   taskList.display();
